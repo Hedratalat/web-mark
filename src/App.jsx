@@ -9,8 +9,8 @@ const Home = lazy(() => import("./pages/Home"));
 const PortfolioDash = lazy(() => import("./pages/PortfolioDash"));
 const MessageDash = lazy(() => import("./pages/MessageDash"));
 const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
-const DashboardLayout = lazy(
-  () => import("./components/DashboardLayout/DashboardLayout"),
+const DashBoardLayout = lazy(
+  () => import("./components/DashBoardLayout/DashBoardLayout"),
 );
 //loading
 const LoadingSpinner = () => (
@@ -32,7 +32,7 @@ function App() {
               path="/dashboard"
               element={
                 // <ProtectedRoute>
-                <DashboardLayout />
+                <DashBoardLayout />
                 // </ProtectedRoute>
               }
             >
