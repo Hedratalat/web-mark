@@ -5,13 +5,13 @@ import { Toaster } from "react-hot-toast";
 import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 
 const Home = lazy(() => import("./pages/Home"));
-const DashBoardLayout = lazy(
-  () => import("./components/DashBoardLayout/DashBoardLayout"),
-);
+
 const PortfolioDash = lazy(() => import("./pages/PortfolioDash"));
 const MessageDash = lazy(() => import("./pages/MessageDash"));
 const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
-
+const DashboardLayout = lazy(
+  () => import("./components/DashboardLayout/DashboardLayout"),
+);
 //loading
 const LoadingSpinner = () => (
   <div className="flex items-center justify-center min-h-screen bg-accent-light">
@@ -32,7 +32,7 @@ function App() {
               path="/dashboard"
               element={
                 // <ProtectedRoute>
-                <DashBoardLayout />
+                <DashboardLayout />
                 // </ProtectedRoute>
               }
             >
