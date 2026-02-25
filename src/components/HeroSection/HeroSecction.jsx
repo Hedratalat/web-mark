@@ -99,15 +99,15 @@ export default function HeroSection() {
 
           {/* كبرت من text-7xl لـ text-8xl */}
           <h1 className="text-6xl md:text-7xl lg:text-7xl font-black leading-tight text-white">
-            I'm{" "}
             <span
               style={{
                 color: "var(--accent)",
                 filter: "drop-shadow(0 0 12px var(--accent))",
               }}
             >
-              Mark
+              I'm{" "}
             </span>
+            Mark
           </h1>
 
           <h2 className="text-3xl md:text-4xl font-bold text-gray-300">
@@ -127,17 +127,12 @@ export default function HeroSection() {
 
           <div className="flex gap-8 my-2">
             {[
-              { num: "50+", label: "Projects" },
+              { num: "300+", label: "Projects" },
               { num: "5+", label: "Years XP" },
               { num: "100%", label: "Quality" },
             ].map((s) => (
               <div key={s.label} className="flex flex-col">
-                <span
-                  className="text-3xl font-black"
-                  style={{ color: "var(--accent)" }}
-                >
-                  {s.num}
-                </span>
+                <span className="text-3xl font-black ">{s.num}</span>
                 <span className="text-gray-500 text-sm">{s.label}</span>
               </div>
             ))}
@@ -147,7 +142,7 @@ export default function HeroSection() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              className="px-8 py-3 rounded-xl font-bold text-black text-lg"
+              className="px-8 py-3 rounded-xl font-bold  text-lg"
               style={{
                 background: "var(--accent)",
                 boxShadow: "0 0 24px var(--accent-30)",
@@ -160,7 +155,6 @@ export default function HeroSection() {
               whileTap={{ scale: 0.97 }}
               className="px-8 py-3 rounded-xl font-bold text-lg border"
               style={{
-                color: "var(--accent)",
                 borderColor: "var(--accent-30)",
                 background: "var(--accent-10)",
               }}

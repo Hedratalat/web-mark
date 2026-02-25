@@ -1,5 +1,4 @@
 import { lazy, Suspense } from "react";
-import CategoryCard from "../components/CategoryCard/CategoryCard";
 
 const Navbar = lazy(() => import("../components/Navbar/Navbar"));
 const HeroSection = lazy(
@@ -8,6 +7,11 @@ const HeroSection = lazy(
 const AboutSection = lazy(
   () => import("../components/AboutSection/AboutSection"),
 );
+const CategoryCard = lazy(
+  () => import("../components/CategoryCard/CategoryCard"),
+);
+const ContactUs = lazy(() => import("../components/ContactUS/ContactUS"));
+const Footer = lazy(() => import("../components/Footer/Footer"));
 
 export default function Home() {
   return (
@@ -16,6 +20,8 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <CategoryCard />
+      <ContactUs />
+      <Footer />
     </Suspense>
   );
 }

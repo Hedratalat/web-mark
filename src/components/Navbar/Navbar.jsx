@@ -1,30 +1,42 @@
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const navLinks = [
     { name: "Home", id: "home" },
     { name: "About", id: "about" },
     { name: "Portfolio", id: "portfolio" },
-
     { name: "Contact", id: "contact" },
   ];
 
   const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    const navbar = document.querySelector("nav");
-    const navbarHeight = navbar?.offsetHeight || 80;
-    if (section) {
-      window.scrollTo({
-        top:
-          section.getBoundingClientRect().top +
-          window.pageYOffset -
-          navbarHeight,
-        behavior: "smooth",
-      });
+    const scroll = () => {
+      const section = document.getElementById(id);
+      const navbar = document.querySelector("nav");
+      const navbarHeight = navbar?.offsetHeight || 80;
+      if (section) {
+        window.scrollTo({
+          top:
+            section.getBoundingClientRect().top +
+            window.pageYOffset -
+            navbarHeight,
+          behavior: "smooth",
+        });
+      }
+    };
+
+    if (location.pathname !== "/") {
+      navigate("/", { replace: false });
+      setTimeout(scroll, 100);
+    } else {
+      scroll();
     }
+
     setMenuOpen(false);
   };
 

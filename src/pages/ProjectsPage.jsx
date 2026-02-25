@@ -11,6 +11,7 @@ import {
   getDoc,
 } from "firebase/firestore";
 import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
 
 const INITIAL_COUNT = 5;
 
@@ -22,12 +23,10 @@ export default function ProjectsPage() {
   const [loading, setLoading] = useState(true);
   const [showAll, setShowAll] = useState(false);
 
-  // ── scroll to top on mount ──
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, []);
 
-  // ── fetch category + projects together ──
   useEffect(() => {
     const fetchData = async () => {
       const [catDoc, snap] = await Promise.all([
@@ -73,7 +72,6 @@ export default function ProjectsPage() {
             ← Back
           </motion.button>
 
-          {/* Header — مش هيظهر إلا لما الـ category تتحمل */}
           {loading ? (
             <div className="flex justify-center py-20">
               <div
@@ -361,6 +359,7 @@ export default function ProjectsPage() {
           )}
         </div>
       </section>
+      <Footer />
     </>
   );
 }
