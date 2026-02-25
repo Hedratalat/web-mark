@@ -10,7 +10,7 @@ const AboutSection = lazy(
 const CategoryCard = lazy(
   () => import("../components/CategoryCard/CategoryCard"),
 );
-const ContactUs = lazy(() => import("../components/ContactUS/ContactUS"));
+const ContactUs = lazy(() => import("../components/ContactUs/ContactUs"));
 const Footer = lazy(() => import("../components/Footer/Footer"));
 
 export default function Home() {
