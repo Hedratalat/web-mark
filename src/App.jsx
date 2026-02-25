@@ -12,6 +12,7 @@ const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
 const DashboardLayout = lazy(
   () => import("./components/DashboardLayout/DashboardLayout"),
 );
+
 //loading
 const LoadingSpinner = () => (
   <div className="flex items-center justify-center min-h-screen bg-accent-light">
