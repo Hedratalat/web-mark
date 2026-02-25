@@ -10,7 +10,7 @@ const PortfolioDash = lazy(() => import("./pages/PortfolioDash"));
 const MessageDash = lazy(() => import("./pages/MessageDash"));
 const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
 const DashBoardLayout = lazy(
-  () => import("./components/DashboardLayout/DashboardLayout"),
+  () => import("./components/DashBoardLayout/DashBoardLayout"),
 );
 //loading
 const LoadingSpinner = () => (
