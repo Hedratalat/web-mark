@@ -18,7 +18,7 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(ellipse at top left, var(--accent-20) 0%, transparent 60%),
+    radial-gradient(ellipse at top left, var(--accent-20) 0%, transparent 75%),
     radial-gradient(
       ellipse at bottom right,
       var(--accent-10) 0%,
@@ -27,4 +27,12 @@ body {
     #050505;
   color: #f0f0f0;
   font-family: "Tajawal", sans-serif;
+}
+@font-face {
+  font-family: "Hello Shine";
+  src:
+    url("../assets/fonts/Hello Shine.ttf") format("truetype"),
+    url("../assets/fonts/Hello Shine.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }

@@ -50,13 +50,23 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <span
-            className="text-3xl"
-            style={{ fontFamily: "'Cinzel', serif", color: "var(--accent)" }}
+          <div
+            className="flex items-center gap-2 cursor-pointer"
+            onClick={() => scrollToSection("home")}
           >
-            Mark Yousry
-          </span>
+            <img
+              src="/public/logomark.png"
+              alt="logo"
+              className="h-10 w-10 object-contain -translate-y-1"
+            />
+
+            <span
+              className="text-2xl font-bold shine-text"
+              style={{ fontFamily: "'Hello Shine', cursive" }}
+            >
+              Mark Yousry
+            </span>
+          </div>
 
           {/* Desktop Links */}
           <ul className="hidden lg:flex items-center gap-7">

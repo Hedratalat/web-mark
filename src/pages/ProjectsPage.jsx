@@ -74,11 +74,21 @@ export default function ProjectsPage() {
 
           {loading ? (
             <div className="flex justify-center py-20">
-              <div
-                className="w-10 h-10 rounded-full border-2 animate-spin"
+              <motion.img
+                src="/logomark.png"
+                alt="Loading"
+                className="w-16 h-16 object-contain"
+                animate={{
+                  scale: [1, 1.15, 1],
+                  opacity: [0.6, 1, 0.6],
+                }}
+                transition={{
+                  duration: 1.8,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 style={{
-                  borderColor: "var(--accent-30)",
-                  borderTopColor: "var(--accent)",
+                  filter: "drop-shadow(0 0 12px var(--accent))",
                 }}
               />
             </div>

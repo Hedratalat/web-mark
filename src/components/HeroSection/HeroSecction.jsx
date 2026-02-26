@@ -1,13 +1,39 @@
 import { motion } from "framer-motion";
+import { Facebook, Instagram, Video } from "lucide-react";
+import { FaBehance, FaTiktok, FaWhatsapp } from "react-icons/fa";
+import { Navigate } from "react-router-dom";
 
 const tools = [
   { name: "Pr", color: "#9999FF", bg: "#2a1a6e", top: "75%", left: "5%" },
   { name: "Ae", color: "#9999FF", bg: "#1a0a4e", top: "80%", left: "55%" },
-  { name: "Ps", color: "#31A8FF", bg: "#0a2a4e", top: "8%", left: "58%" },
-  { name: "Bl", color: "#FF7043", bg: "#3e1a0a", top: "10%", left: "5%" },
+  { name: "Dr", color: "#31A8FF", bg: "#0a2a4e", top: "8%", left: "58%" },
+  { name: "Ai", color: "#FF7043", bg: "#3e1a0a", top: "10%", left: "5%" },
 ];
 
 export default function HeroSection() {
+  const scrollToSection = (id) => {
+    const scroll = () => {
+      const section = document.getElementById(id);
+      const navbarHeight = document.querySelector("nav")?.offsetHeight || 80;
+      if (section) {
+        window.scrollTo({
+          top:
+            section.getBoundingClientRect().top +
+            window.pageYOffset -
+            navbarHeight,
+          behavior: "smooth",
+        });
+      }
+    };
+
+    if (location.pathname !== "/") {
+      Navigate("/");
+      setTimeout(scroll, 100);
+    } else {
+      scroll();
+    }
+  };
+
   return (
     <section
       id="home"
@@ -40,8 +66,8 @@ export default function HeroSection() {
             >
               <img
                 src="/image.jfif"
-                alt="Fares"
-                className="w-full h-full object-cover object-top"
+                alt="mark yousry"
+                className="w-full h-full object-cover object-[center_20%] scale-125"
                 onError={(e) => {
                   e.target.style.display = "none";
                   e.target.parentElement.style.background =
@@ -78,13 +104,13 @@ export default function HeroSection() {
 
         {/* RIGHT */}
         <motion.div
-          className="flex flex-col gap-5"
+          className="flex flex-wrap gap-3"
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <motion.span
-            className="w-fit px-4 py-1 rounded-full text-sm font-semibold border"
+            className="flex items-center gap-2 w-fit px-4 py-1 rounded-full text-sm font-semibold border"
             style={{
               color: "var(--accent)",
               borderColor: "var(--accent-30)",
@@ -95,6 +121,21 @@ export default function HeroSection() {
             transition={{ delay: 0.4 }}
           >
             ✦ Senior Video Editor
+          </motion.span>
+
+          <motion.span
+            className="flex items-center gap-2 w-fit px-4 py-1 rounded-full text-sm font-semibold border"
+            style={{
+              color: "var(--accent)",
+              borderColor: "var(--accent-30)",
+              background: "var(--accent-10)",
+            }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+          >
+            <Video size={16} />
+            Videographer
           </motion.span>
 
           {/* كبرت من text-7xl لـ text-8xl */}
@@ -125,17 +166,75 @@ export default function HeroSection() {
             precision to every project.
           </p>
 
-          <div className="flex gap-8 my-2">
-            {[
-              { num: "300+", label: "Projects" },
-              { num: "5+", label: "Years XP" },
-              { num: "100%", label: "Quality" },
-            ].map((s) => (
-              <div key={s.label} className="flex flex-col">
-                <span className="text-3xl font-black ">{s.num}</span>
-                <span className="text-gray-500 text-sm">{s.label}</span>
-              </div>
-            ))}
+          <div className="flex flex-col gap-8 ">
+            {" "}
+            <div className="flex gap-8">
+              {[
+                { num: "300+", label: "Projects" },
+                { num: "5+", label: "Years XP" },
+                { num: "100%", label: "Quality" },
+              ].map((s) => (
+                <div key={s.label} className="flex flex-col">
+                  <span className="text-3xl font-black ">{s.num}</span>
+                  <span className="text-gray-500 text-sm">{s.label}</span>
+                </div>
+              ))}
+            </div>
+            {/* Social Media */}
+            <div className="flex gap-4 mb-1 ">
+              {[
+                {
+                  icon: <Facebook size={20} />,
+                  label: "Facebook",
+                  url: "https://www.facebook.com/share/17E2Rk2wEJ/?mibextid=wwXIfr",
+                  color: "#1877F2",
+                },
+                {
+                  icon: <Instagram size={20} />,
+                  label: "Instagram",
+                  url: "https://www.instagram.com/mark_yousry?igsh=a3B3N3l0Nmh3Y243&utm_source=qr",
+                  color: "#E1306C",
+                },
+                {
+                  icon: <FaTiktok size={20} />,
+                  label: "TikTok",
+                  url: "https://www.tiktok.com/@mark_youssry",
+                  color: "#ffffff",
+                },
+                {
+                  icon: <FaBehance size={20} />,
+                  label: "Behance",
+                  url: "https://www.behance.net/markyousry1",
+                  color: "#1769FF",
+                },
+                {
+                  icon: <FaWhatsapp size={20} />,
+                  label: "WhatsApp",
+                  url: "https://wa.me/201110711006",
+
+                  color: "#25D366",
+                },
+              ].map((s) => (
+                <motion.a
+                  key={s.label}
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.15, y: -3 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-11 h-11 rounded-xl flex items-center justify-center font-black text-sm border"
+                  style={{
+                    color: s.color,
+                    borderColor: `${s.color}44`,
+                    background: `${s.color}11`,
+                    boxShadow: `0 0 12px ${s.color}22`,
+                  }}
+                  title={s.label}
+                >
+                  {s.icon}
+                </motion.a>
+              ))}
+            </div>
           </div>
 
           <div className="flex gap-4 flex-wrap mt-2">
@@ -147,6 +246,7 @@ export default function HeroSection() {
                 background: "var(--accent)",
                 boxShadow: "0 0 24px var(--accent-30)",
               }}
+              onClick={() => scrollToSection("portfolio")}
             >
               View My Work
             </motion.button>
@@ -158,6 +258,7 @@ export default function HeroSection() {
                 borderColor: "var(--accent-30)",
                 background: "var(--accent-10)",
               }}
+              onClick={() => scrollToSection("portfolio")}
             >
               Contact Me
             </motion.button>

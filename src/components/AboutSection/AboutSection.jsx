@@ -77,7 +77,7 @@ export default function AboutSection() {
                 style={{ background: "var(--accent)" }}
               />
               <img
-                src="/image.jfif"
+                src="/about.jfif"
                 alt="Mark Yousry"
                 className="relative w-full h-full object-cover object-top rounded-2xl"
                 style={{ border: "2px solid var(--accent-30)" }}
@@ -170,7 +170,6 @@ export default function AboutSection() {
                     key={item}
                     className="px-3 py-1 rounded-full text-sm border"
                     style={{
-                      color: "var(--accent)",
                       borderColor: "var(--accent-30)",
                       background: "var(--accent-10)",
                     }}
