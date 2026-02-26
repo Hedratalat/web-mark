@@ -110,9 +110,8 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <motion.span
-            className="flex items-center gap-2 w-fit px-4 py-1 rounded-full text-sm font-semibold border"
+            className="flex items-center gap-2 w-fit px-4 py-1 rounded-full text-sm font-semibold border text-white"
             style={{
-              color: "var(--accent)",
               borderColor: "var(--accent-30)",
               background: "var(--accent-10)",
             }}
@@ -124,9 +123,8 @@ export default function HeroSection() {
           </motion.span>
 
           <motion.span
-            className="flex items-center gap-2 w-fit px-4 py-1 rounded-full text-sm font-semibold border"
+            className="flex items-center gap-2 w-fit px-4 py-1 rounded-full text-sm font-semibold border text-white"
             style={{
-              color: "var(--accent)",
               borderColor: "var(--accent-30)",
               background: "var(--accent-10)",
             }}
@@ -138,7 +136,6 @@ export default function HeroSection() {
             Videographer
           </motion.span>
 
-          {/* كبرت من text-7xl لـ text-8xl */}
           <h1 className="text-6xl md:text-7xl lg:text-7xl font-black leading-tight text-white">
             <span
               style={{
@@ -174,7 +171,7 @@ export default function HeroSection() {
                 { num: "5+", label: "Years XP" },
                 { num: "100%", label: "Quality" },
               ].map((s) => (
-                <div key={s.label} className="flex flex-col">
+                <div key={s.label} className="flex flex-col text-white">
                   <span className="text-3xl font-black ">{s.num}</span>
                   <span className="text-gray-500 text-sm">{s.label}</span>
                 </div>
