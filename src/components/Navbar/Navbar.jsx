@@ -55,7 +55,7 @@ export default function Navbar() {
             onClick={() => scrollToSection("home")}
           >
             <img
-              src="/public/logomark.png"
+              src="/logomark.png"
               alt="logo"
               className="h-10 w-10 object-contain -translate-y-1"
             />
