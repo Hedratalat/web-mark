@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 import "./App.css";
 import "./index.css";
 import { Toaster } from "react-hot-toast";
-import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 const Home = lazy(() => import("./pages/Home"));
 
@@ -26,7 +26,7 @@ const LoadingSpinner = () => (
 function App() {
   return (
     <>
-      <HashRouter>
+      <BrowserRouter>
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -46,7 +46,7 @@ function App() {
             </Route>
           </Routes>
         </Suspense>
-      </HashRouter>
+      </BrowserRouter>
       <Toaster position="top-center" reverseOrder={false} />
     </>
   );

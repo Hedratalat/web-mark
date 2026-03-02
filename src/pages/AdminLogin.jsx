@@ -18,7 +18,7 @@ export default function AdminLogin() {
 
       if (user.user.email?.toLowerCase().trim() === "markyousry@gmail.com") {
         toast.success("Welcome Admin");
-        navigate("/dashboard/productDash");
+        navigate("/dashboard/portfolio");
       } else {
         toast.error("You are not allowed to access this page");
         navigate("/");
@@ -48,26 +48,28 @@ export default function AdminLogin() {
 
         {/* Email */}
         <div className="mb-4">
-          <label className="block text-accent-30 text-sm mb-1">Email</label>
+          <label className="block text-accent text-sm mb-1">Email</label>
           <input
             type="email"
             placeholder="Enter your admin email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="border border-accent-20 focus:ring-2 focus:ring-accent outline-none p-2.5 w-full rounded-lg text-accent-30 bg-accent-soft"
+            className="border border-accent-20 focus:ring-2 focus:ring-accent outline-none p-2.5 w-full 
+            rounded-lg text-accent "
             required
           />
         </div>
 
         {/* Password */}
         <div className="mb-6 relative">
-          <label className="block text-accent-30 text-sm mb-1">Password</label>
+          <label className="block text-accent text-sm mb-1">Password</label>
           <input
             type={showPassword ? "text" : "password"}
             placeholder="Enter your password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="border border-accent-20 focus:ring-2 focus:ring-accent outline-none p-2.5 w-full rounded-lg pr-10 text-accent-30 bg-accent-soft"
+            className="border border-accent-20 focus:ring-2 focus:ring-accent outline-none p-2.5 w-full
+             rounded-lg pr-10 text-accent "
             required
           />
           <button
