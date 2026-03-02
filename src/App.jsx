@@ -12,7 +12,10 @@ const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
 const DashboardLayout = lazy(
   () => import("./components/DashboardLayout/DashboardLayout"),
 );
-
+const ProtectedRoute = lazy(
+  () => import("./components/ProtectedRoute/ProtectedRoute"),
+);
+const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 //loading
 const LoadingSpinner = () => (
   <div className="flex items-center justify-center min-h-screen bg-accent-light">
@@ -28,13 +31,13 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/portfolio/:catId" element={<ProjectsPage />} />
-            {/* <Route path="admin-login11" element={<AdminLogin />} /> */}{" "}
+            <Route path="adminlogin-mark" element={<AdminLogin />} />
             <Route
               path="/dashboard"
               element={
-                // <ProtectedRoute>
-                <DashboardLayout />
-                // </ProtectedRoute>
+                <ProtectedRoute>
+                  <DashboardLayout />
+                </ProtectedRoute>
               }
             >
               <Route index element={<Navigate to="portfolio" replace />} />
