@@ -6,7 +6,7 @@ import { Navigate } from "react-router-dom";
 const tools = [
   { name: "Pr", color: "#9999FF", bg: "#2a1a6e", top: "75%", left: "5%" },
   { name: "Ae", color: "#9999FF", bg: "#1a0a4e", top: "80%", left: "55%" },
-  { name: "Dr", color: "#31A8FF", bg: "#0a2a4e", top: "8%", left: "58%" },
+  { name: "Dr", color: "#31A8FF", bg: "#0a2a4e", top: "3%", left: "58%" },
   { name: "Ai", color: "#FF7043", bg: "#3e1a0a", top: "10%", left: "5%" },
 ];
 
@@ -65,7 +65,7 @@ export default function HeroSection() {
               style={{ borderColor: "var(--accent-30)" }}
             >
               <img
-                src="/image.jfif"
+                src="/img.jpeg"
                 alt="mark yousry"
                 className="w-full h-full object-cover object-[center_20%] scale-125"
                 onError={(e) => {
